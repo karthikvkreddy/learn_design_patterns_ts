@@ -41,12 +41,15 @@ class Notebook {
 - E.g., A file you’ve downloaded from a server may be large, but since it is already in memory, you could just clone it, and work on the new copy independently of the original.
 - Use the Prototype pattern when your code shouldn’t depend on the concrete classes of objects that you need to copy.
 
-### code:
-- In my example, I have created an array of numbers. At first impressions, when this array is copied, it will appear that the array was fully cloned. But the inner items of the array were not. They will point to the same memory location as the original array; however, the memory identifier of the new array is new and different from the original.
-- In the MyClass.clone() method, there is a line return JSON.parse(JSON.stringify(this)); that is commented out. Uncomment out this line, and comment out the line before it to now be  // return Object.assign({}, this).
-- Re compile and execute the file, and now the array items will be copied as well. This is a `deep copy`.
 
 ### Real world example:
 - List of other examples:
     - Mobile Phone making company releasing different mobiles for various segments. Now, each mobile will have some basic common functionality with some extent of variations. Here, the company will use one of its phone software and clone it according to other phones.
 - Laptop making company designs Laptop’s body for one laptop in the software. After that, for future releases of this Laptop model, the company will simply clone the last model’s body and do the required changes as per the latest trend and requirements.
+
+### Code :
+- In my example, I have created an array of numbers. At first impressions, when this array is copied, it will appear that the array was fully cloned. But the inner items of the array were not. They will point to the same memory location as the original array; however, the memory identifier of the new array is new and different from the original.
+- In the MyClass.clone() method, there is a line return JSON.parse(JSON.stringify(this)); that is commented out. Uncomment out this line, and comment out the line before it to now be  // return Object.assign({}, this).
+- Re compile and execute the file, and now the array items will be copied as well. This is a `deep copy`.
+
+[Find here : Typescript](./code.ts)
